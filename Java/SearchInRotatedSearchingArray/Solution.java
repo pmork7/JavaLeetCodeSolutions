@@ -4,7 +4,16 @@ import java.math.*;
 public class Solution {
     /* Find offset by pulling the last element from the array. */
     public static int findOffset(int[] nums) {
-        return nums[nums.length - 1];
+        if (nums.length > 1) {
+            int count = 0;
+            int i = nums.length - 1;
+            while (i > 0 && nums[i] > nums[i - 1]) {
+                count++;
+                i--;
+            }
+            return count + 1;
+        }
+        return 1;
     }
     
     /* Helper method to call findOffset() and binary search methods and return result */
@@ -34,6 +43,6 @@ public class Solution {
     
     public static void main(String[] args) {
       int[] nums = {4,5,6,7,0,1,2};
-      System.out.println(search(nums, 0));
+      System.out.println(search(nums, 6));
     }
 }
