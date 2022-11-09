@@ -1,3 +1,6 @@
 **/Java/**/*.class
 *.class
 /Java/SearchInRotatedSearchingArray/Solution.class
+Java/**/*.iml
+Java/**/out
+Java/**/.idea
