@@ -8,7 +8,6 @@ public class Permutations {
         if (numbers.size() == 0) {
             ArrayList<Integer> answerCopy = (ArrayList<Integer>) answer.clone();
             result.add(answerCopy);
-            answer.clear();
         } else {
             for (int i = 0; i < numbers.size(); i++) {
                 answer.add(numbers.get(i));
@@ -19,8 +18,8 @@ public class Permutations {
                 combinedList.addAll(rightSide);
                 ArrayList<Integer> combinedListCopy = new ArrayList<>();
                 combinedListCopy = (ArrayList<Integer>) combinedList.clone();
-                System.out.println(combinedListCopy);
                 generatePermutations((ArrayList<Integer>)combinedListCopy, answer, result);
+                answer.subList(answer.size() - 1, answer.size()).clear();
                 combinedList.clear();
             }
         }
@@ -35,8 +34,9 @@ public class Permutations {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1,2,3};
+        int[] nums = {1,2,3,4, 5};
         List<List<Integer>> result = permute(nums);
         System.out.println(result);
+        System.out.println(result.size());
     }
 }
