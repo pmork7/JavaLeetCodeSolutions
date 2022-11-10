@@ -18,7 +18,7 @@ public class Permutations {
                 combinedList.addAll(rightSide);
                 ArrayList<Integer> combinedListCopy = new ArrayList<>();
                 combinedListCopy = (ArrayList<Integer>) combinedList.clone();
-                generatePermutations((ArrayList<Integer>)combinedListCopy, answer, result);
+                generatePermutations((ArrayList)combinedListCopy, answer, result);
                 answer.subList(answer.size() - 1, answer.size()).clear();
                 combinedList.clear();
             }
@@ -34,7 +34,7 @@ public class Permutations {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1,2,3,4, 5};
+        int[] nums = {1,2,3};
         List<List<Integer>> result = permute(nums);
         System.out.println(result);
         System.out.println(result.size());
